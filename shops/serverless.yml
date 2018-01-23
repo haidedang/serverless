@@ -12,12 +12,11 @@ custom:
       port: 8000
       inMemory: true
       migrate: true
-    migration:
-      dir: offline/migrations
 
 provider:
   name: aws
   runtime: nodejs6.10
+  region: us-east-2
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
@@ -72,17 +71,17 @@ functions:
           method: delete
           cors: true
 
-  getAllProducts:
-    handler: getAllProducts.get
-    events:
-      - http:
-          path: shops/{id}/products
-          method: get
-          cors: true
+#  getAllProducts:
+#    handler: getAllProducts.get
+#    events:
+#      - http:
+#          path: shops/{id}/products
+#          method: get
+#          cors: true
 
 resources:
   Resources:
-    TodosDynamoDbTable:
+    shopsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:

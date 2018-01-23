@@ -1,9 +1,9 @@
 {
-  "name": "aws-rest-api-offline",
+  "name": "shopservice",
   "version": "1.0.0",
   "description": "Serverless REST API with DynamoDB and offline support",
   "repository": "",
-  "author": "Christoph Gysin <christoph.gysin@gmail.com>",
+  "author": "Hai Dang",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.12.0",

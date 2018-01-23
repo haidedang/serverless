@@ -6,7 +6,7 @@
     },
     "provider": {
       "stage": "dev",
-      "region": "us-east-1",
+      "region": "us-east-2",
       "variableSyntax": "\\${([ ~:a-zA-Z0-9._'\",\\-\\/\\(\\)]+?)}",
       "name": "aws",
       "runtime": "nodejs6.10",
@@ -24,7 +24,7 @@
             "dynamodb:UpdateItem",
             "dynamodb:DeleteItem"
           ],
-          "Resource": "arn:aws:dynamodb:us-east-1:*:table/products-dev"
+          "Resource": "arn:aws:dynamodb:us-east-2:*:table/products-dev"
         }
       ],
       "versionFunctions": true,
@@ -165,7 +165,7 @@
                   [
                     "products",
                     "dev",
-                    "us-east-1",
+                    "us-east-2",
                     "lambdaRole"
                   ]
                 ]
@@ -179,7 +179,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/products/dev/1516571115899-2018-01-21T21:45:15.899Z/products.zip"
+                "S3Key": "serverless/products/dev/1516722985599-2018-01-23T15:56:25.599Z/products.zip"
               },
               "FunctionName": "products-dev-create",
               "Handler": "create.create",
@@ -220,7 +220,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/products/dev/1516571115899-2018-01-21T21:45:15.899Z/products.zip"
+                "S3Key": "serverless/products/dev/1516722985599-2018-01-23T15:56:25.599Z/products.zip"
               },
               "FunctionName": "products-dev-list",
               "Handler": "list.list",
@@ -261,7 +261,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/products/dev/1516571115899-2018-01-21T21:45:15.899Z/products.zip"
+                "S3Key": "serverless/products/dev/1516722985599-2018-01-23T15:56:25.599Z/products.zip"
               },
               "FunctionName": "products-dev-get",
               "Handler": "get.get",
@@ -302,7 +302,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/products/dev/1516571115899-2018-01-21T21:45:15.899Z/products.zip"
+                "S3Key": "serverless/products/dev/1516722985599-2018-01-23T15:56:25.599Z/products.zip"
               },
               "FunctionName": "products-dev-update",
               "Handler": "update.update",
@@ -343,7 +343,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/products/dev/1516571115899-2018-01-21T21:45:15.899Z/products.zip"
+                "S3Key": "serverless/products/dev/1516722985599-2018-01-23T15:56:25.599Z/products.zip"
               },
               "FunctionName": "products-dev-delete",
               "Handler": "delete.delete",
@@ -702,7 +702,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1516571115922": {
+          "ApiGatewayDeployment1516722985617": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -883,7 +883,7 @@
               }
             }
           },
-          "TodosDynamoDbTable": {
+          "productsDynamoDbTable": {
             "Type": "AWS::DynamoDB::Table",
             "DeletionPolicy": "Retain",
             "Properties": {
@@ -953,7 +953,7 @@
                   {
                     "Ref": "ApiGatewayRestApi"
                   },
-                  ".execute-api.us-east-1.amazonaws.com/dev"
+                  ".execute-api.us-east-2.amazonaws.com/dev"
                 ]
               ]
             }
@@ -1173,7 +1173,7 @@
     },
     "resources": {
       "Resources": {
-        "TodosDynamoDbTable": {
+        "productsDynamoDbTable": {
           "Type": "AWS::DynamoDB::Table",
           "DeletionPolicy": "Retain",
           "Properties": {
@@ -1199,10 +1199,10 @@
       },
       "Outputs": {}
     },
-    "artifact": "/Users/haidang/Desktop/aws-node-rest-api-with-dynamodb-and-offline/products/.serverless/products.zip"
+    "artifact": "/Users/hai.dang/serverless/products/.serverless/products.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/products/dev/1516571115899-2018-01-21T21:45:15.899Z",
+    "artifactDirectoryName": "serverless/products/dev/1516722985599-2018-01-23T15:56:25.599Z",
     "artifact": "products.zip"
   }
 }

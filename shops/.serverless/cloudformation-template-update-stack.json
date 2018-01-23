@@ -40,12 +40,6 @@
         "LogGroupName": "/aws/lambda/shops-dev-delete"
       }
     },
-    "GetAllProductsLogGroup": {
-      "Type": "AWS::Logs::LogGroup",
-      "Properties": {
-        "LogGroupName": "/aws/lambda/shops-dev-getAllProducts"
-      }
-    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -100,9 +94,6 @@
                     },
                     {
                       "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shops-dev-delete:*"
-                    },
-                    {
-                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shops-dev-getAllProducts:*"
                     }
                   ]
                 },
@@ -126,9 +117,6 @@
                     },
                     {
                       "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shops-dev-delete:*:*"
-                    },
-                    {
-                      "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shops-dev-getAllProducts:*:*"
                     }
                   ]
                 },
@@ -142,7 +130,7 @@
                     "dynamodb:UpdateItem",
                     "dynamodb:DeleteItem"
                   ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/shops-dev"
+                  "Resource": "arn:aws:dynamodb:us-east-2:*:table/shops-dev"
                 }
               ]
             }
@@ -155,7 +143,7 @@
             [
               "shops",
               "dev",
-              "us-east-1",
+              "us-east-2",
               "lambdaRole"
             ]
           ]
@@ -169,7 +157,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shops/dev/1516571923348-2018-01-21T21:58:43.348Z/shops.zip"
+          "S3Key": "serverless/shops/dev/1516723867636-2018-01-23T16:11:07.636Z/shops.zip"
         },
         "FunctionName": "shops-dev-create",
         "Handler": "create.create",
@@ -193,14 +181,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateLambdaVersionTaP6Y24u4WQpRh3Q19TqVCd3PdTv1XU9fkvll5ztXY": {
+    "CreateLambdaVersionpIeOsG6DCklBxU5jYvA17sCzckVVCQ7yZTSWVkZqph0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateLambdaFunction"
         },
-        "CodeSha256": "6gTom89qK2odPMhhFkGTd2EOZ+duMU44qK43kcGtbo8="
+        "CodeSha256": "/lff7wDcFf9UtY527V6YC/qRT0qes+SXIbkpnJywUyU="
       }
     },
     "ListLambdaFunction": {
@@ -210,7 +198,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shops/dev/1516571923348-2018-01-21T21:58:43.348Z/shops.zip"
+          "S3Key": "serverless/shops/dev/1516723867636-2018-01-23T16:11:07.636Z/shops.zip"
         },
         "FunctionName": "shops-dev-list",
         "Handler": "list.list",
@@ -234,14 +222,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ListLambdaVersionYWgAFUmBX6Yv5DRatevpWHUQur1NjDe820Exzs": {
+    "ListLambdaVersioneeSR1UW6iPgEsiTUVMVrLQicrkWrm1xH654lDcedlNo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListLambdaFunction"
         },
-        "CodeSha256": "6gTom89qK2odPMhhFkGTd2EOZ+duMU44qK43kcGtbo8="
+        "CodeSha256": "/lff7wDcFf9UtY527V6YC/qRT0qes+SXIbkpnJywUyU="
       }
     },
     "GetLambdaFunction": {
@@ -251,7 +239,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shops/dev/1516571923348-2018-01-21T21:58:43.348Z/shops.zip"
+          "S3Key": "serverless/shops/dev/1516723867636-2018-01-23T16:11:07.636Z/shops.zip"
         },
         "FunctionName": "shops-dev-get",
         "Handler": "get.get",
@@ -275,14 +263,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetLambdaVersionBH490l2TIYbIIs8R04LX8usYhs9pZbQoruYjNAQho": {
+    "GetLambdaVersionBYb6dKGrHjBNtwPUqPncb9TL6EPEGXnwfDReOo4eHVc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetLambdaFunction"
         },
-        "CodeSha256": "6gTom89qK2odPMhhFkGTd2EOZ+duMU44qK43kcGtbo8="
+        "CodeSha256": "/lff7wDcFf9UtY527V6YC/qRT0qes+SXIbkpnJywUyU="
       }
     },
     "UpdateLambdaFunction": {
@@ -292,7 +280,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shops/dev/1516571923348-2018-01-21T21:58:43.348Z/shops.zip"
+          "S3Key": "serverless/shops/dev/1516723867636-2018-01-23T16:11:07.636Z/shops.zip"
         },
         "FunctionName": "shops-dev-update",
         "Handler": "update.update",
@@ -316,14 +304,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateLambdaVersionUR0MMhmmXWk0FtdvKuPmiCfXG3zwSZJsW6H3IkcI": {
+    "UpdateLambdaVersionWFed1EhlG6zF0nWAnxfbymR4sWJJWEnoTtED025LfI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateLambdaFunction"
         },
-        "CodeSha256": "6gTom89qK2odPMhhFkGTd2EOZ+duMU44qK43kcGtbo8="
+        "CodeSha256": "/lff7wDcFf9UtY527V6YC/qRT0qes+SXIbkpnJywUyU="
       }
     },
     "DeleteLambdaFunction": {
@@ -333,7 +321,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shops/dev/1516571923348-2018-01-21T21:58:43.348Z/shops.zip"
+          "S3Key": "serverless/shops/dev/1516723867636-2018-01-23T16:11:07.636Z/shops.zip"
         },
         "FunctionName": "shops-dev-delete",
         "Handler": "delete.delete",
@@ -357,55 +345,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "DeleteLambdaVersionvECnbEVGRTEhyz4dZHVQV94L7DoqaHTKYMoxbu4zTew": {
+    "DeleteLambdaVersionQMFiRU9Kmsg6avDROwjofcutuGiANOqdxYLjTGLXREE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteLambdaFunction"
         },
-        "CodeSha256": "6gTom89qK2odPMhhFkGTd2EOZ+duMU44qK43kcGtbo8="
-      }
-    },
-    "GetAllProductsLambdaFunction": {
-      "Type": "AWS::Lambda::Function",
-      "Properties": {
-        "Code": {
-          "S3Bucket": {
-            "Ref": "ServerlessDeploymentBucket"
-          },
-          "S3Key": "serverless/shops/dev/1516571923348-2018-01-21T21:58:43.348Z/shops.zip"
-        },
-        "FunctionName": "shops-dev-getAllProducts",
-        "Handler": "getAllProducts.get",
-        "MemorySize": 1024,
-        "Role": {
-          "Fn::GetAtt": [
-            "IamRoleLambdaExecution",
-            "Arn"
-          ]
-        },
-        "Runtime": "nodejs6.10",
-        "Timeout": 6,
-        "Environment": {
-          "Variables": {
-            "DYNAMODB_TABLE": "shops-dev"
-          }
-        }
-      },
-      "DependsOn": [
-        "GetAllProductsLogGroup",
-        "IamRoleLambdaExecution"
-      ]
-    },
-    "GetAllProductsLambdaVersion8WqdNfBg60zIVyAnI2XO4kg7JgFBIlYK3fOSahkAu8": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "GetAllProductsLambdaFunction"
-        },
-        "CodeSha256": "6gTom89qK2odPMhhFkGTd2EOZ+duMU44qK43kcGtbo8="
+        "CodeSha256": "/lff7wDcFf9UtY527V6YC/qRT0qes+SXIbkpnJywUyU="
       }
     },
     "ApiGatewayRestApi": {
@@ -441,18 +388,6 @@
           "Ref": "ApiGatewayResourceShops"
         },
         "PathPart": "{id}",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayResourceShopsIdVarProducts": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Ref": "ApiGatewayResourceShopsIdVar"
-        },
-        "PathPart": "products",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -544,52 +479,6 @@
         },
         "ResourceId": {
           "Ref": "ApiGatewayResourceShopsIdVar"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayMethodShopsIdVarProductsOptions": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "AuthorizationType": "NONE",
-        "HttpMethod": "OPTIONS",
-        "MethodResponses": [
-          {
-            "StatusCode": "200",
-            "ResponseParameters": {
-              "method.response.header.Access-Control-Allow-Origin": true,
-              "method.response.header.Access-Control-Allow-Headers": true,
-              "method.response.header.Access-Control-Allow-Methods": true,
-              "method.response.header.Access-Control-Allow-Credentials": true
-            },
-            "ResponseModels": {}
-          }
-        ],
-        "RequestParameters": {},
-        "Integration": {
-          "Type": "MOCK",
-          "RequestTemplates": {
-            "application/json": "{statusCode:200}"
-          },
-          "IntegrationResponses": [
-            {
-              "StatusCode": "200",
-              "ResponseParameters": {
-                "method.response.header.Access-Control-Allow-Origin": "'*'",
-                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
-                "method.response.header.Access-Control-Allow-Credentials": "'false'"
-              },
-              "ResponseTemplates": {
-                "application/json": ""
-              }
-            }
-          ]
-        },
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceShopsIdVarProducts"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -791,46 +680,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodShopsIdVarProductsGet": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "HttpMethod": "GET",
-        "RequestParameters": {},
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceShopsIdVarProducts"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        },
-        "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
-        "Integration": {
-          "IntegrationHttpMethod": "POST",
-          "Type": "AWS_PROXY",
-          "Uri": {
-            "Fn::Join": [
-              "",
-              [
-                "arn:aws:apigateway:",
-                {
-                  "Ref": "AWS::Region"
-                },
-                ":lambda:path/2015-03-31/functions/",
-                {
-                  "Fn::GetAtt": [
-                    "GetAllProductsLambdaFunction",
-                    "Arn"
-                  ]
-                },
-                "/invocations"
-              ]
-            ]
-          }
-        },
-        "MethodResponses": []
-      }
-    },
-    "ApiGatewayDeployment1516571923373": {
+    "ApiGatewayDeployment1516723867667": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -843,8 +693,7 @@
         "ApiGatewayMethodShopsGet",
         "ApiGatewayMethodShopsIdVarGet",
         "ApiGatewayMethodShopsIdVarPut",
-        "ApiGatewayMethodShopsIdVarDelete",
-        "ApiGatewayMethodShopsIdVarProductsGet"
+        "ApiGatewayMethodShopsIdVarDelete"
       ]
     },
     "CreateLambdaPermissionApiGateway": {
@@ -1012,40 +861,7 @@
         }
       }
     },
-    "GetAllProductsLambdaPermissionApiGateway": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "FunctionName": {
-          "Fn::GetAtt": [
-            "GetAllProductsLambdaFunction",
-            "Arn"
-          ]
-        },
-        "Action": "lambda:InvokeFunction",
-        "Principal": "apigateway.amazonaws.com",
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:aws:execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "/*/*"
-            ]
-          ]
-        }
-      }
-    },
-    "TodosDynamoDbTable": {
+    "shopsDynamoDbTable": {
       "Type": "AWS::DynamoDB::Table",
       "DeletionPolicy": "Retain",
       "Properties": {
@@ -1078,37 +894,31 @@
     "CreateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateLambdaVersionTaP6Y24u4WQpRh3Q19TqVCd3PdTv1XU9fkvll5ztXY"
+        "Ref": "CreateLambdaVersionpIeOsG6DCklBxU5jYvA17sCzckVVCQ7yZTSWVkZqph0"
       }
     },
     "ListLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListLambdaVersionYWgAFUmBX6Yv5DRatevpWHUQur1NjDe820Exzs"
+        "Ref": "ListLambdaVersioneeSR1UW6iPgEsiTUVMVrLQicrkWrm1xH654lDcedlNo"
       }
     },
     "GetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetLambdaVersionBH490l2TIYbIIs8R04LX8usYhs9pZbQoruYjNAQho"
+        "Ref": "GetLambdaVersionBYb6dKGrHjBNtwPUqPncb9TL6EPEGXnwfDReOo4eHVc"
       }
     },
     "UpdateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateLambdaVersionUR0MMhmmXWk0FtdvKuPmiCfXG3zwSZJsW6H3IkcI"
+        "Ref": "UpdateLambdaVersionWFed1EhlG6zF0nWAnxfbymR4sWJJWEnoTtED025LfI"
       }
     },
     "DeleteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteLambdaVersionvECnbEVGRTEhyz4dZHVQV94L7DoqaHTKYMoxbu4zTew"
-      }
-    },
-    "GetAllProductsLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "GetAllProductsLambdaVersion8WqdNfBg60zIVyAnI2XO4kg7JgFBIlYK3fOSahkAu8"
+        "Ref": "DeleteLambdaVersionQMFiRU9Kmsg6avDROwjofcutuGiANOqdxYLjTGLXREE"
       }
     },
     "ServiceEndpoint": {
@@ -1121,7 +931,7 @@
             {
               "Ref": "ApiGatewayRestApi"
             },
-            ".execute-api.us-east-1.amazonaws.com/dev"
+            ".execute-api.us-east-2.amazonaws.com/dev"
           ]
         ]
       }

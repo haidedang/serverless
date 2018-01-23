@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * bad Gateway response from AWS
+ * @type {*|AWS.DynamoDB.DocumentClient}
+ */
+
+/*
 const dynamodb = require('./dynamodb');
 const request = require('request');
 
@@ -7,7 +13,7 @@ module.exports.get = (event, context, callback) => {
 
     var options = {
         method: 'GET',
-        url: 'https://6hbxny1mx1.execute-api.us-east-1.amazonaws.com/dev/products',
+        url: 'https://ce8ie3idkc.execute-api.us-east-2.amazonaws.com/dev/products',
         headers:
             {
                 'content-type': 'application/json' },
@@ -26,3 +32,4 @@ module.exports.get = (event, context, callback) => {
     });
 
 };
+*/
